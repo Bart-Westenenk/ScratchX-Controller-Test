@@ -1,6 +1,8 @@
 var leftStick = 4;
 
 (function(ext) {
+    console.log("Hello");
+
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
