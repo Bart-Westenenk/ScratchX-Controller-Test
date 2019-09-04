@@ -105,7 +105,8 @@ var leftStick = 0;
     var descriptor = {
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
-            ['r', 'L3-X', 'getXL3'],
+            ['b', 'L3-X', 'getXL3'],
+            //['b','',''],
         ]
     };
 
