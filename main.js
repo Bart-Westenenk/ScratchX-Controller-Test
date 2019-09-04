@@ -2,18 +2,20 @@
 var gamepadAPI = {
   controller: {},
   turbo: false,
-  connect: function() {},
-  disconnect: function() {},
-  update: function() {},
-  buttonPressed: function() {},
+  connect: function() { leftStick = 1},
+  disconnect: function() { leftStick = 2},
+  update: function() { leftStick = 3},
+  buttonPressed: function() { leftStick = 4},
   buttons: [],
   buttonsCache: [],
   buttonsStatus: [],
   axesStatus: []
 };
 
+var leftStick = 0;
+
 (function(ext) {
-    console.log("Hello");
+
     window.addEventListener("gamepadconnected", gamepadAPI.connect);
     window.addEventListener("gamepaddisconnected", gamepadAPI.disconnect);
 
