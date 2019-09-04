@@ -98,16 +98,14 @@ var leftStick = 0;
     };
 
     ext.getXL3 = function() {
-        return buttonsStatus[11];
+        return buttonPressed('A', 'true');
     };
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
-            //[' ', 'Update controller', ''],
             ['r', 'L3-X', 'getXL3'],
-            
         ]
     };
 
