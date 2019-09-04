@@ -10,13 +10,14 @@
 
     ext.my_first_block = function() {
         // Code that gets executed when the block is run
+		return 100;
     };
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [' ', 'my first block', 'my_first_block'],
+            ['r', 'Left stick X', 'my_first_block'],
         ]
     };
 
