@@ -1,4 +1,4 @@
-boolean gpConnected;
+/*boolean gpConnected;
 var gamepad;
 
 window.addEventListener("gamepadconnected", function(e) {
@@ -14,7 +14,7 @@ window.addEventListener("gamepaddisconnected", function(e) {
   gpConnected = false;
   gamepad = null;
 });
-
+*/
 (function(ext) {
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
