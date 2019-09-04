@@ -42,7 +42,7 @@ window.addEventListener("gamepaddisconnected", function(e) {
         blocks: [
             // Block type, block name, function name
             ['r', 'Left stick X', 'my_first_block'],
-			['r', 'Gamepad connected?', ''
+			['r', 'Gamepad connected?', 'check_connection'],
     };
 
     // Register the extension
