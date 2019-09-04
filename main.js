@@ -1,7 +1,21 @@
-var leftStick = 4;
+
+var gamepadAPI = {
+  controller: {},
+  turbo: false,
+  connect: function() {},
+  disconnect: function() {},
+  update: function() {},
+  buttonPressed: function() {},
+  buttons: [],
+  buttonsCache: [],
+  buttonsStatus: [],
+  axesStatus: []
+};
 
 (function(ext) {
     console.log("Hello");
+    window.addEventListener("gamepadconnected", gamepadAPI.connect);
+    window.addEventListener("gamepaddisconnected", gamepadAPI.disconnect);
 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
@@ -12,7 +26,7 @@ var leftStick = 4;
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.power = function() {
+    ext.getXL3 = function() {
         return leftStick;
     };
 
@@ -20,7 +34,7 @@ var leftStick = 4;
     var descriptor = {
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
-            ['r', 'L3-X', 'power'],
+            ['r', 'L3-X', 'getXL3'],
         ]
     };
 
