@@ -1,3 +1,5 @@
+var leftStick = 4;
+
 (function(ext) {
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
@@ -8,15 +10,15 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.power = function(base, exponent) {
-        return Math.pow(base, exponent);
+    ext.power = function() {
+        return leftStick;
     };
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
-            ['r', '%n ^ %n', 'power', 2, 3],
+            ['r', 'L3-X', 'power'],
         ]
     };
 
