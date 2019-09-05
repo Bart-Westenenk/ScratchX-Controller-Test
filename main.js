@@ -88,9 +88,6 @@ var leftStick;
 
 (function(ext) {
 
-    window.addEventListener("gamepadconnected", gamepadAPI.connect);
-    window.addEventListener("gamepaddisconnected", gamepadAPI.disconnect);
-
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -105,6 +102,11 @@ var leftStick;
 
     }
 
+    ext.init = function(){
+      window.addEventListener("gamepadconnected", gamepadAPI.connect);
+      window.addEventListener("gamepaddisconnected", gamepadAPI.disconnect);
+    }
+
     ext.getXL3 = function() {
         return gamepadAPI.buttonPressed("A", "true");
     };
@@ -115,6 +117,7 @@ var leftStick;
             // Block type, block name, function name, param1 default value, param2 default value
             ['b', 'L3-X', 'getXL3'],
             ['b', 'Connected', 'getConnected'],
+            [' ', 'Initialize controller', 'init'],
             //['b','',''],
         ]
     };
