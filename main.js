@@ -107,6 +107,10 @@ var leftStick;
       window.addEventListener("gamepaddisconnected", gamepadAPI.disconnect);
     }
 
+    ext.update = function(){
+      gamepadAPI.update;
+    }
+
     ext.getXL3 = function() {
         return gamepadAPI.buttonPressed("A", "true");
     };
@@ -118,6 +122,7 @@ var leftStick;
             ['b', 'L3-X', 'getXL3'],
             ['b', 'Connected', 'getConnected'],
             [' ', 'Initialize controller', 'init'],
+            [' ', 'Update detection loop', 'update'],
             //['b','',''],
         ]
     };
