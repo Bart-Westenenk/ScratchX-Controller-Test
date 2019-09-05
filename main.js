@@ -2,7 +2,7 @@
 var gamepadAPI = {
   controller: {},
   turbo: false,
-  connected,
+  connected: false,
   connect: function(evt) {
     gamepadAPI.controller = evt.gamepad;
     gamepadAPI.turbo = true;
@@ -101,7 +101,7 @@ var leftStick;
     };
 
     ext.getConnected = function(){
-      
+      return gamepadAPI.connected;
 
     }
 
