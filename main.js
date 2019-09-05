@@ -81,7 +81,7 @@ var gamepadAPI = {
   axesStatus: []
 };
 
-var leftStick = 0;
+var leftStick;
 
 (function(ext) {
 
@@ -98,7 +98,7 @@ var leftStick = 0;
     };
 
     ext.getXL3 = function() {
-        return buttonPressed('A', 'true');
+        return gamepadAPI.buttonPressed("A", "true");
     };
 
     // Block and block menu descriptions
