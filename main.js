@@ -2,14 +2,17 @@
 var gamepadAPI = {
   controller: {},
   turbo: false,
+  connected,
   connect: function(evt) {
     gamepadAPI.controller = evt.gamepad;
     gamepadAPI.turbo = true;
     console.log('Gamepad connected.');
+    connected = true;
   },
 
   disconnect: function(evt) {
     gamepadAPI.turbo = false;
+    connected = false;
     delete gamepadAPI.controller;
   console.log('Gamepad disconnected.');
   },
@@ -97,6 +100,11 @@ var leftStick;
         return {status: 2, msg: 'Ready'};
     };
 
+    ext.getConnected = function(){
+      
+
+    }
+
     ext.getXL3 = function() {
         return gamepadAPI.buttonPressed("A", "true");
     };
@@ -106,6 +114,7 @@ var leftStick;
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
             ['b', 'L3-X', 'getXL3'],
+            ['b', 'Connected', 'getConnected'],
             //['b','',''],
         ]
     };
